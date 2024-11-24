@@ -2,11 +2,16 @@ import subprocess
 import argparse
 
 parser = argparse.ArgumentParser(description="Python server file unloading")
+parser.add_argument("-w", "--wget", dest='sub_wget', help="downloads program",default="wget", required=True)
+parser.add_argument("-w", "--curl", dest='sub_curl', help="downloads program", required=True)
 parser.add_argument("-ip", "--ip", dest='sub_ip', help="ip addres",default="127.0.0.1", required=True)
 parser.add_argument("-p", "--port", dest='sub_port', help="port", required=True)
 options = parser.parse_args()
+
 port = options.sub_port
 ip = options.sub_ip
+wget = options.sub_wget
+curl = options.sub_curl
 
 print(f"Start PSFU - Python Server File Unloading")
 print(f"--------------------------------------------------")
